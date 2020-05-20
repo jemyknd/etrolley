@@ -1,0 +1,24 @@
+.Lmar{
+    margin: 0px;
+}
+.Lvh{
+    height: 7vh;
+}
+.Lvh2{
+    height: 6.5vh;
+}
+.Lwid{
+    width:7%
+}
+.ontop{
+    position: relative;
+}
+.cwid{
+    width:50vw;
+}
+.lwid{
+    width: 30vw;
+}
+div.ant-select-selector{
+    padding: 0px 0px;
+}

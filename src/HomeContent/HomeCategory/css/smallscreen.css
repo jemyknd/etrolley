@@ -1,0 +1,13 @@
+.Sgrid-Container{
+    height: 30vh;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,32%);
+    grid-template-rows: 100%;
+    column-gap: 2%;
+}
+.Sgrid-item{
+    background-color: pink;
+    position: relative;
+    cursor: pointer;
+}

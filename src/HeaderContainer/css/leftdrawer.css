@@ -1,0 +1,34 @@
+
+ ::-webkit-scrollbar .ds{display:none;}
+
+.dotclps div.ant-collapse-content-box{
+    display: none;
+}
+
+
+
+ div.ant-drawer-body{
+    /* background-color: aqua; */
+    padding: 30px 0px 0px 0px;
+}
+
+.it{
+    margin: 0px;
+}
+
+.topu{
+    /* background-color:magenta; */
+    height: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-bottom: 10px;
+}
+ .ds .down{
+    background-color: #f2f2f2;
+    padding-left: 14px;
+    flex-grow: 1;
+
+}
+.wow{
+    padding-top: 23px;
+}

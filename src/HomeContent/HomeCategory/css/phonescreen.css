@@ -1,0 +1,13 @@
+.PCgrid-Container{
+    height: 120vh;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:repeat(3,32%) ;
+    row-gap: 2%;
+}
+.PCgrid-item{
+    background-color: pink;
+    position: relative;
+    cursor: pointer;
+}

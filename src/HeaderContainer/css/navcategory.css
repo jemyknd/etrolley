@@ -1,0 +1,19 @@
+.navcat{
+    display: grid;
+    grid-template-columns: 185px 185px 185px 185px 188px ;
+    grid-template-rows: 450px;
+    grid-gap: 2%;
+    
+    position: relative;
+    width: 100%;
+    z-index: 500;
+    /* padding-left: 10%; */
+    
+}
+.Cmar{
+    margin: 0px;
+}
+.Ntop{
+    position: absolute;
+    z-index: 200;
+}

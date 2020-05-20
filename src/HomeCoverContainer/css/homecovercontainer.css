@@ -1,0 +1,15 @@
+.coverHeight{
+    height:83vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+
+.innerheight{
+    height: auto;
+}
+.ind{
+    z-index: 1;
+    position: relative;
+}

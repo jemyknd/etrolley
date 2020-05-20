@@ -1,0 +1,6 @@
+export const WOMENSHOW = "WOMENSHOW";
+export const WOMENHIDE = "WOMENHIDE";
+export const MENSHOW = "MENSHOW";
+export const MENHIDE = "MENHIDE";
+export const ACCESSORIESSHOW ="ACCESSORIESSHOW";
+export const ACCESSORIESHIDE ="ACCESSORIESHIDE";

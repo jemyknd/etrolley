@@ -1,0 +1,20 @@
+.men_ct{
+    display: grid;
+    width:100%;
+    grid-template-columns: 250px 150px 150px 150px 250px;
+    grid-template-rows: 450px;
+    grid-gap: 1%;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+}
+.bp{
+    background-color:papayawhip
+}
+.Mmar{
+    margin: 0px;
+}
+.Mtop{
+    position: absolute;
+    z-index: 10;
+}

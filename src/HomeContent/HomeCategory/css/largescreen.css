@@ -1,0 +1,14 @@
+.LCgrid-Container{
+    height: 45vh;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,32%);
+    grid-template-rows: 100%;
+    column-gap: 2%;
+}
+.LCgrid-item{
+    /* background-color: pink; */
+    background-color: deeppink;
+    position: relative;
+    cursor: pointer;
+}

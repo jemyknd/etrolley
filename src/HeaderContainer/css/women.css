@@ -1,0 +1,26 @@
+.ct{
+    display: grid;
+    grid-template-columns: 150px 150px 150px 500px;
+    grid-template-rows: 450px;
+    grid-gap: 1.5%;
+    position: relative;
+    width: 100%;
+    z-index: 500;  
+}
+.inGrd{
+    display:grid;
+    grid-template-columns: 230px 230px;
+    grid-template-rows:200px 200px;
+    grid-gap:3%;
+
+}
+.b{
+    background-color: papayawhip
+}
+.Wtop{
+    position: absolute;
+    z-index: 10;
+}
+.Wmar{
+    margin: 0px;
+}
