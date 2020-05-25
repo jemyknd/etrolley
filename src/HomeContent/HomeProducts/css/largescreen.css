@@ -1,0 +1,28 @@
+.gridcontainer{
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit,minmax(270px,270px) );
+    grid-gap: 20px; */
+    /* column-gap: 10px;
+    row-gap: 10px; */
+    grid-template-columns: repeat(4,24.25%);
+    grid-template-rows: repeat(auto, 570px);
+    column-gap: 1%;
+    row-gap: 30px;
+    grid-auto-flow: row;
+    justify-items: center;
+    
+}
+.cot{
+    background-color: chartreuse;
+    width: 100%;
+    height: 60%;
+}
+.cell{
+    background-color: aqua;
+    width: 100%;
+    height: 601px;
+
+    
+  
+    
+}

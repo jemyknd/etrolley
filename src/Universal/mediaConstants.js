@@ -9,6 +9,8 @@ export const smaller = "(min-width: 320px) and (max-width: 480px)";
 export const smallest = "(min-width: 321px) and (max-width: 480px)";
 export const Smallest = "(max-width: 320px)";
 
+//Grid sections
+
 
 
 // /* 

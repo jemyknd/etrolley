@@ -1,6 +1,6 @@
 import React from "react";
 import { Drawer, Divider } from "antd";
-import "./css/Animate.css";
+// import "./css/Animate.css";
 import "./css/searchdrawer.css"
 import { connect } from "react-redux";
 import { topDrawerSearchField } from "../Redux/Actions/HeaderComponts/LargeScreen/Actions";

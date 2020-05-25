@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./css/LargeScreen.css";
 import Sticky from "react-sticky-el";
-import "./css/Animate.css";
+// import "./css/Animate.css";
 import { Divider, Select,Popover } from "antd";
 import NavCategory from "./NavCategory";
 import Men from "./Men";
