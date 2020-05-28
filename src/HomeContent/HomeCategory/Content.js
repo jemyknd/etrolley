@@ -22,7 +22,7 @@ const Content = ({ selectedState,imageURL,links,category }) => (
         style={{transform:`scale3d(${interpolatedStyles.scale}, ${interpolatedStyles.scale}, ${interpolatedStyles.scale})`,opacity:interpolatedStyles.opacity}}
         className=" bg-white-80  transparent ba b--black-30 justify-center flex  cat-selection">
         <div className=" flex tc w-80 flex-column justify-center">
-          <div>{category}</div>w
+          <div>{category}</div>
           <ListComponent listData={links} />
         </div>
        
