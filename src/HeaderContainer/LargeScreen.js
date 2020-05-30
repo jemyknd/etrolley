@@ -112,7 +112,7 @@ class LargeScreen extends Component {
               </div>
               <div>
                 <Select
-                  defaultValue="USD"
+                  defaultValue="UGX"
                   style={{ width: 100 }}
                   bordered={false}
                   loading={false}>

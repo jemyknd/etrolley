@@ -7,7 +7,7 @@
     grid-template-columns: repeat(4,24.25%);
     grid-template-rows: repeat(auto, 570px);
     column-gap: 1%;
-    row-gap: 30px;
+    row-gap: 10px;
     grid-auto-flow: row;
     justify-items: center;
     
@@ -25,9 +25,16 @@
 .cell{
     background-color: aqua;
     width: 100%;
-    height: 601px;
-
-    
-  
-    
+    height: 601px; 
+}
+.timerfont{
+    font-size: 11px;
+}
+.ant-tooltip-inner {
+    color: white;
+    background-color: black;
+    padding: 0px;
+}
+.ant-tooltip-placement-bottom .ant-tooltip-arrow, .ant-tooltip-placement-bottomLeft .ant-tooltip-arrow, .ant-tooltip-placement-bottomRight .ant-tooltip-arrow{
+    border-bottom-color: black;
 }

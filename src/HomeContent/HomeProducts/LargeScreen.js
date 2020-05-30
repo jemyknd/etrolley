@@ -3,6 +3,10 @@ import "./css/largescreen.css";
 import { connect } from "react-redux";
 import { Motion, spring, presets } from "react-motion";
 import { Rate } from "antd";
+import { FaRegEye } from "react-icons/fa";
+import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
+import { IconContext } from "react-icons";
+import Timer from "react-compound-timer";
 import {
   ShoppingCartOutlined,
   HeartOutlined,
@@ -17,6 +21,8 @@ import {
   unselectColor,
   selectSize,
   unselectSize,
+  animateInButton,
+  animateOutButton,
 } from "../../Redux/Actions/HomeContent/HomeProducts/Actions";
 
 const mapDispatchToProps = (dispatch) => ({
@@ -28,6 +34,8 @@ const mapDispatchToProps = (dispatch) => ({
   unselectColor: (itemId, colorId) => dispatch(unselectColor(itemId, colorId)),
   selectSize: (itemId, sizeId) => dispatch(selectSize(itemId, sizeId)),
   unselectSize: (itemId, sizeId) => dispatch(unselectSize(itemId, sizeId)),
+  animateInButton: (id) => dispatch(animateInButton(id)),
+  animateOutButton: (id) => dispatch(animateOutButton(id)),
 });
 
 const mapStateToProps = (state) => ({
@@ -44,20 +52,208 @@ const LargeScreen = ({
   unselectColor,
   unselectSize,
   selectSize,
+  animateOutButton,
+  animateInButton,
 }) => (
   <div class="gridcontainer mt3">
     {newProductsData.map((item, index) => (
       <div class="cell flex flex-column" key={item.id}>
-        <div class="imageContainerL">{item.heartFill.toString()}</div>
+
+        <div
+          onMouseEnter={() => animateInButton(index)}
+          onMouseLeave={() => animateOutButton(index)}
+          class="imageContainerL flex flex-column justify-between pointer overflow-hidden">
+          <div className="flex flex-row justify-between">
+            <div className="ml1 mt2 flex flex-column">
+              {item.hot ? (
+                <div
+                  className=" mb1 tc white pl1 pr1"
+                  style={{ backgroundColor: "#FF7143" }}>
+                  Hot
+                </div>
+              ) : null}
+              {item.new ? (
+                <div
+                  className=" mb1 tc white  pl1 pr1"
+                  style={{ backgroundColor: "#42A5F6" }}>
+                  New
+                </div>
+              ) : null}
+              {item.discounted ? (
+                <div
+                  className=" mb1 tc white  pl1 pr1"
+                  style={{
+                    backgroundColor: "#F54337",
+                  }}>{`-${item.discountPercentage}%`}</div>
+              ) : null}
+            </div>
+            <div>
+              <IconContext.Provider
+                value={{
+                  color: "black",
+                  size: "20px",
+                  className: "global-class-name",
+                }}>
+                <Motion
+                  defaultStyle={{ translateX: 30, translateY: -35, opacity: 0 }}
+                  style={{
+                    translateX: spring(
+                      item.imageButtons ? -10 : 30,
+                      presets.gentle
+                    ),
+                    translateY: spring(
+                      item.imageButtons ? 8 : -35,
+                      presets.gentle
+                    ),
+                    opacity: spring(item.imageButtons ? 1 : 0, presets.gentle),
+                  }}>
+                  {(style) => (
+                    <div
+                      style={{
+                        transform: `translateX(${style.translateX}px) translateY(${style.translateY}px)`,
+                        opacity: style.opacity,
+                      }}>
+                      <div
+                        style={{
+                          height: "32px",
+                          width: "32px",
+                          borderRadius: "16px",
+                          backgroundColor: "white",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}>
+                        <FaRegEye />
+                      </div>
+                    </div>
+                  )}
+                </Motion>
+              </IconContext.Provider>
+            </div>
+          </div>
+          <div className="flex flex-row justify-between">
+            <div>
+              {item.discounted && item.discountTimer ? (
+                <div>
+                  <Timer initialTime={item.timerValue} direction="backward">
+                    {() => (
+                      <div className="flex flex-row timerfont black bg-white-80 ml1 mb2">
+                        <div className="tc br b--black-50">
+                          <div className="flex flex-column ml1 mr1 ">
+                            <div>
+                              <Timer.Days />{" "}
+                            </div>
+                            <div>DAYS</div>
+                          </div>
+                        </div>
+                        <div className=" tc  br b--black-50">
+                          <div className="flex flex-column tc  ml1 mr1 ">
+                            <div className="pa0">
+                              <Timer.Hours />{" "}
+                            </div>
+                            <div>HRS</div>
+                          </div>
+                        </div>
+                        <div className="tc  br b--black-50 ">
+                          <div className="flex flex-column tc ml1 mr1  ">
+                            <div>
+                              <Timer.Minutes />
+                            </div>
+                            <div>MIN</div>
+                          </div>
+                        </div>
+                        <div className="flex flex-column tc ml1 mr1 ">
+                          <div>
+                            <Timer.Seconds />
+                          </div>
+                          <div>SEC</div>
+                        </div>
+                      </div>
+                    )}
+                  </Timer>
+                </div>
+              ) : null}
+            </div>
+            <Motion
+              defaultStyle={{ translateX: -20, translateY: 10, opacity: 0 }}
+              style={{
+                translateX: spring(
+                  item.imageButtons ? -10 : 70,
+                  presets.gentle
+                ),
+                translateY: spring(item.imageButtons ? -3 : 60, presets.gentle),
+                opacity: spring(item.imageButtons ? 1 : 0, presets.gentle),
+              }}>
+              {(style) => (
+                <div
+                  style={{
+                    transform: `translateX(${style.translateX}px) translateY(${style.translateY}px)`,
+                    opacity: style.opacity,
+                  }}>
+                  <div className="flex flex-row">
+                    <div>
+                      <IconContext.Provider
+                        value={{
+                          color: "black",
+                          size: "18px",
+                          className: "global-class-name",
+                        }}>
+                        <div
+                          style={{
+                            height: "32px",
+                            width: "32px",
+                            borderRadius: "16px",
+                            backgroundColor: "white",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                          }}>
+                          <BsChevronLeft />
+                        </div>
+                      </IconContext.Provider>
+                    </div>
+                    <div className="ml2">
+                      <IconContext.Provider
+                        value={{
+                          color: "black",
+                          size: "18px",
+                          className: "global-class-name",
+                        }}>
+                        <div
+                          style={{
+                            height: "32px",
+                            width: "32px",
+                            borderRadius: "16px",
+                            backgroundColor: "white",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                          }}>
+                          <BsChevronRight />
+                        </div>
+                      </IconContext.Provider>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </Motion>
+          </div>
+        </div>
         {/* middle Part */}
         <div class="optionsL flex flex-column">
-          <div className="mt2">label</div>
-          <div>product name</div>
-          <div className="flex flex-row">
-            <div className="">oldPrice</div>
-            <div className="ml1">newPrice</div>
+          <div className="mt2 black-50">{item.lable}</div>
+          <div className="black">{item.productName}</div>
+          <div className="">
+            {item.discounted ? (
+              <div className="flex flex-row">
+                <strike className="f7 black-50 pointer pt1">{`${item.currency}${item.dicountedPrice}`}</strike>
+                <div className="ml1 f5 black pointer">{`${item.currency}${item.realPrice}`}</div>
+              </div>
+            ) : (
+              <div className="f5 black pointer">{`${item.currency}${item.realPrice}`}</div>
+            )}
           </div>
-          <div className="flex flex-row pointer">
+          <div className="flex flex-row pointer mt1">
             {item.colors.map((color, colorIndex) => (
               <div
                 key={colorIndex}
@@ -81,7 +277,7 @@ const LargeScreen = ({
               </div>
             ))}
           </div>
-          <div className="flex flex-row pointer">
+          <div className="flex flex-row pointer mb2">
             {item.sizes.map((size, sizeIndex) => (
               <div
                 key={sizeIndex}
@@ -93,8 +289,8 @@ const LargeScreen = ({
                 style={{
                   border: "1px solid black",
                   fontSize: "12px",
-                  color: `${size.selected ? "black" : "#778899"}`,
-                  borderColor: `${size.selected ? "black" : "#778899"}`,
+                  color: `${size.selected ? "black" : "#858585"}`,
+                  borderColor: `${size.selected ? "black" : "#858585"}`,
                   verticalAlign: "center",
                 }}
                 className="tc ma1 pl1 pr1">
@@ -130,21 +326,27 @@ const LargeScreen = ({
                   ADD TO CART
                 </div>
               </div>
+
               <div className=" flex items-center ml3">
+              
                 <div
                   onClick={() =>
                     item.heartFill ? outlinedHeart(index) : filledHeart(index)
                   }
                   className=" pointer flex items-center">
                   {item.heartFill ? (
-                    <HeartFilled style={{ fontSize: "20px", color: "black" }} />
+                      <HeartFilled style={{ fontSize: "20px", color: "black" }} />
+                        
+                    
                   ) : (
-                    <HeartOutlined
-                      style={{ fontSize: "20px", color: "black" }}
-                    />
+                        <HeartOutlined style={{ fontSize: "20px", color: "black" }}/>
+                      
                   )}
                 </div>
+                
+                
               </div>
+
             </div>
           </div>
           <div className="mt2">

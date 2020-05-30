@@ -1,4 +1,4 @@
-import {HEARTFILLED,HEARTOUTLINED,DOBUTTONICON,BUTTONICON,SELECTCOLOR,UNSELECTCOLOR,UNSELESIZE,SELECTSIZE} from './Constants';
+import {HEARTFILLED,HEARTOUTLINED,DOBUTTONICON,BUTTONICON,SELECTCOLOR,UNSELECTCOLOR,UNSELESIZE,SELECTSIZE,IN_IMAGE_BUTTON,OUT_IMAGE_BUTTON} from './Constants';
 
 export const filledHeart = (id) =>({
     type:HEARTFILLED,
@@ -19,6 +19,16 @@ export const animateInIcon = (id) =>({
 
 export const animateOutIcon = (id) =>({
     type:BUTTONICON,
+    payload:id
+})
+export const animateInButton = (id) =>({
+    type:IN_IMAGE_BUTTON,
+    payload:id
+
+})
+
+export const animateOutButton = (id) =>({
+    type:OUT_IMAGE_BUTTON,
     payload:id
 })
 export const selectColor = (itemId,colorId) =>({
