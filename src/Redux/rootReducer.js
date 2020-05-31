@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 import {HeaderReducer} from './Actions/HeaderComponts/LargeScreen/HeaderReducer';
 import {homeCategoryReducer} from './Actions/HomeContent/HomeCategory/HomeCategoryreducer';
-import {HomeProductReducer} from './Actions/HomeContent/HomeProducts/HomeProductReducer'
+import {HomeProductReducer} from './Actions/HomeContent/HomeProducts/HomeProductReducer';
+import {HomeBigCardsReducer} from './Actions/HomeContent/HomeBigCards/HomeBigCardsReducer';
+
 
 
 
@@ -9,7 +11,8 @@ import {HomeProductReducer} from './Actions/HomeContent/HomeProducts/HomeProduct
 const rootReducer = combineReducers({
     header: HeaderReducer,
     homeCategory: homeCategoryReducer,
-    homeProducts: HomeProductReducer
+    homeProducts: HomeProductReducer,
+    homeBigCards: HomeBigCardsReducer
 });
 
 export default rootReducer;

@@ -1,7 +1,6 @@
 import React from 'react';
 import ListComponent from '../Universal/ListComponent';
 import './css/women.css';
-import { Divider } from 'antd';
 const Women = ({ show, hide }) => {
 	if (show) {
 		return (

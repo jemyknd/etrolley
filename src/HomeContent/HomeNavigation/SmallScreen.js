@@ -1,14 +1,26 @@
 import React from 'react';
+import { connect } from "react-redux";
+import {
+  newProducts,
+  specialProducts,
+  featuredProducts
+} from "../../Redux/Actions/HomeContent/HomeProducts/Actions";
 
-const SmallScreen = () => (
+const mapDispatchToProps = (dispatch) => ({
+  newProducts: () => dispatch(newProducts()),
+  specialProducts: () => dispatch(specialProducts()),
+  featuredProducts: () => dispatch(featuredProducts())
+});
+
+const SmallScreen = ({newProducts,specialProducts,featuredProducts }) => (
     <div className="w-100 flex flex-row justify-center mt4">
-        <div className="w-75 justify-around flex flex-row">
-            <div className="pointer">New Products</div>
-            <div  className="pointer">Special Products</div>
-            <div  className="pointer">Featured Products</div>
+        <div className="w-100 justify-around flex flex-row">
+        <div className="sf fw4 hover-black pointer" onClick={newProducts}>New Products</div>
+    <div className="sf fw4 hover-black pointer" onClick={specialProducts}>Special Products</div>
+    <div className="sf fw4 hover-black pointer" onClick={featuredProducts}>Featured Products</div>
         </div>
     </div>
 );
-export default SmallScreen;
+export default connect(null, mapDispatchToProps)(SmallScreen);
 
 

@@ -55,14 +55,14 @@ const LargeScreen = ({
   animateOutButton,
   animateInButton,
 }) => (
-  <div class="gridcontainer mt3">
+  <div className="gridcontainer mt3">
     {newProductsData.map((item, index) => (
-      <div class="cell flex flex-column" key={item.id}>
+      <div className="cell flex flex-column" key={item.id}>
 
         <div
           onMouseEnter={() => animateInButton(index)}
           onMouseLeave={() => animateOutButton(index)}
-          class="imageContainerL flex flex-column justify-between pointer overflow-hidden">
+          className="imageContainerL flex flex-column justify-between pointer overflow-hidden">
           <div className="flex flex-row justify-between">
             <div className="ml1 mt2 flex flex-column">
               {item.hot ? (
@@ -240,7 +240,7 @@ const LargeScreen = ({
           </div>
         </div>
         {/* middle Part */}
-        <div class="optionsL flex flex-column">
+        <div className="optionsL flex flex-column">
           <div className="mt2 black-50">{item.lable}</div>
           <div className="black">{item.productName}</div>
           <div className="">

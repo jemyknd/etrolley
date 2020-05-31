@@ -1,5 +1,14 @@
-import {HEARTFILLED,HEARTOUTLINED,DOBUTTONICON,BUTTONICON,SELECTCOLOR,UNSELECTCOLOR,UNSELESIZE,SELECTSIZE,IN_IMAGE_BUTTON,OUT_IMAGE_BUTTON} from './Constants';
+import {HEARTFILLED,HEARTOUTLINED,DOBUTTONICON,BUTTONICON,SELECTCOLOR,UNSELECTCOLOR,FEATURED_PRODUCTS,NEW_PRODUCTS,SPECIAL_PRODUCTS,UNSELESIZE,SELECTSIZE,IN_IMAGE_BUTTON,OUT_IMAGE_BUTTON} from './Constants';
 
+export const newProducts = () =>({
+    type : NEW_PRODUCTS,
+})
+export const specialProducts = () => ({
+    type: SPECIAL_PRODUCTS,
+})
+export const featuredProducts = () => ({
+    type: FEATURED_PRODUCTS,
+})
 export const filledHeart = (id) =>({
     type:HEARTFILLED,
     payload:id

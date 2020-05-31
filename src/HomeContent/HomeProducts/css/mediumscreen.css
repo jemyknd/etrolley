@@ -1,9 +1,5 @@
 .gridcontainer2{
     display: grid;
-    /* grid-template-columns: repeat(auto-fit,minmax(270px,270px) );
-    grid-gap: 20px; */
-    /* column-gap: 10px;
-    row-gap: 10px; */
     grid-template-columns: repeat(3,32%);
     grid-template-rows: repeat(auto, 570px);
     grid-template-rows: auto;
@@ -21,9 +17,8 @@
 .cell{
     background-color: aqua;
     width: 100%;
-    height: 601px;
-
-    
-  
-    
+    height: 601px; 
+}
+.timerfont{
+    font-size: 11px;
 }

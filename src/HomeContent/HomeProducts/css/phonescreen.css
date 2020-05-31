@@ -8,22 +8,28 @@
     grid-template-rows: repeat(auto, 510px);
     grid-template-rows: auto;
     column-gap: 2%;
-    row-gap: 30px;
+    row-gap: 25px;
     grid-auto-flow: row;
     justify-items: center;
     
 }
+.cellP{
+    background-color: aqua;
+    width: 100%;
+    height: 501px; 
+}
 .cot{
     background-color: chartreuse;
     width: 100%;
-    height: 60%;
+    height: 55%;
 }
-.cell{
-    background-color: aqua;
+.optionsP{
+    height: 55%;
     width: 100%;
-    height: 601px;
-
-    
-  
-    
+    background-color: cornflowerblue;
+}
+.imageConP{
+    background-color: chartreuse;
+    width: 100%;
+    height: 45%;
 }

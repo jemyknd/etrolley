@@ -1,6 +1,5 @@
 import React from 'react';
 import './css/men.css';
-import {Divider} from 'antd';
 import ListComponent from '../Universal/ListComponent'
 
 const Men = ({showMen,hideMen}) => {
