@@ -3,7 +3,7 @@ import {HeaderReducer} from './Actions/HeaderComponts/LargeScreen/HeaderReducer'
 import {homeCategoryReducer} from './Actions/HomeContent/HomeCategory/HomeCategoryreducer';
 import {HomeProductReducer} from './Actions/HomeContent/HomeProducts/HomeProductReducer';
 import {HomeBigCardsReducer} from './Actions/HomeContent/HomeBigCards/HomeBigCardsReducer';
-
+import {HomeProductScrollReducer} from './Actions/HomeContent/HomeProductScroll/HomeProductScrollReducer';
 
 
 
@@ -12,7 +12,8 @@ const rootReducer = combineReducers({
     header: HeaderReducer,
     homeCategory: homeCategoryReducer,
     homeProducts: HomeProductReducer,
-    homeBigCards: HomeBigCardsReducer
+    homeBigCards: HomeBigCardsReducer,
+    homeScrollProducts : HomeProductScrollReducer
 });
 
 export default rootReducer;

@@ -19,7 +19,7 @@
     background-color: cornflowerblue;
 }
 .cell{
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 100%;
     height: 601px; 
 }

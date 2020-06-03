@@ -3,11 +3,11 @@ import "./css/LargeScreeen.css";
 
 
 const LargeScreen = () => (
-  <div className="flex flex-row justify-between ">
-      <div className = "w-50 vh-75 flex  items-center">
+  <div className="flex flex-row justify-between mt4 mb4 ">
+      <div className = "w-50 tsvh flex  items-center ">
       <div
       style={{ backgroundColor: "papayawhip" }}
-      className="flex justify-center items-center h-75 wLL ">
+      className="flex justify-center items-center h-100 wLL ">
       <div className=" flex flex-column w-70 ">
         <div className=" black-70 f4 tc">NEW ARRIVALS</div>
         <div className=" fw4 black f2 mt1 tc">TOUCH OF FASHION</div>
@@ -21,10 +21,10 @@ const LargeScreen = () => (
       </div>
     
 
-    <div className="w-50 vh-75 flex justify-end items-center">
+    <div className="w-50 tsvh flex justify-end items-center">
     <div
       style={{ backgroundColor: "papayawhip" }}
-      className="flex justify-center items-center h-75 wLL ">
+      className="flex justify-center items-center h-100 wLL ">
       <div className=" flex flex-column w-70 ">
         <div className=" black-70 f4 tc">DISCOVER THEM ALL</div>
         <div className=" fw4 black f2 mt1 tc">THIS SEASON'S BOMBER JACKETS</div>
