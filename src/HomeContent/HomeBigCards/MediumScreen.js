@@ -12,7 +12,7 @@ const MediumScreen = () => (
         <div className=" black-70 f5 tc">NEW ARRIVALS</div>
         <div className=" fw4 black f4 mt1 tc">TOUCH OF FASHION</div>
         <div className=" flex tc justify-center ma1 ">
-          <div className="ba pointer hover-bg-white b--black bg-black hover-black white pa1 pl2 pr2">
+          <div className="ba pointer hover-bg-white hover-black bg-animate b--black bg-black white  pa1 pl2 pr2">
             DISCOVER MORE!
           </div>
         </div>
@@ -29,7 +29,7 @@ const MediumScreen = () => (
         <div className=" black-70 f5 tc">DISCOVER THEM ALL</div>
         <div className=" fw4 black f4 mt1 tc">THIS SEASON'S BOMBER JACKETS</div>
         <div className=" flex tc justify-center ma1 ">
-          <div className="ba pointer hover-bg-white b--black hover-black bg-black white pa1 pl2 pr2">
+          <div className="ba pointer hover-bg-white hover-black bg-animate b--black bg-black white  pa1 pl2 pr2">
             DISCOVER MORE!
           </div>
         </div>

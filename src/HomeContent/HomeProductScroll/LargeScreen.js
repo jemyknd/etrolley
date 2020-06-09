@@ -70,7 +70,7 @@ const LargeScreen = ({
     slidesToScroll:1,
     autoplay:true,
     className:' leftright',
-    dots:false,
+    dots:true,
     swipeToSlide: true,
  autoplaySpeed: 5000,
     responsive: [
@@ -93,7 +93,7 @@ const LargeScreen = ({
     customSlider.current.prev();
   }
   return (
-    <div className="flex flex-column" >
+    <div className="flex flex-column mb5" >
             <div className="flex justify-center f4 black">Trending Now</div>
            
               <div className="relative " onMouseEnter={()=>showArrow()} onMouseLeave={()=>hideArrow()} >
@@ -101,7 +101,7 @@ const LargeScreen = ({
             <Carousel ref={customSlider}  {...settings}>
 
         {scrollProducts.map((item, index) => (
-          <div className="cell flex flex-column pr3" key={item.id}>
+          <div className="cell flex flex-column  pr3" key={item.id}>
             <div
               onMouseEnter={() => animateInButton(index)}
               onMouseLeave={() => animateOutButton(index)}
@@ -356,7 +356,7 @@ const LargeScreen = ({
                   <div
                     onMouseEnter={() => animateInIcon(index)}
                     onMouseLeave={() => animateOutIcon(index)}
-                    className="b--black hover-white hover-bg-black pointer ba items-center justify-center flex flex-row pl1 pr1 w-60 pt1 pb1 overflow-hidden   ">
+                    className="hover-bg-black hover-white bg-animate b--black black pointer ba items-center justify-center flex flex-row pl1 pr1 w-60 pt1 pb1 overflow-hidden   ">
                     <Motion
                       defaultStyle={{ translateX: -20, opacity: 0 }}
                       style={{

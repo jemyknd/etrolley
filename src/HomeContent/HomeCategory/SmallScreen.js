@@ -3,7 +3,7 @@ import "./css/smallscreen.css";
 import Content from './Content';
 
 const PhoneScreen = ({category}) => (
-    <div className="bg-purple Sgrid-Container" >
+    <div className=" Sgrid-Container" >
         <div className="Sgrid-item">
         <Content  category="WOMEN'S" links={[]} />
         </div>

@@ -218,7 +218,7 @@ const PhoneScreen = ({
               <div
                 onMouseEnter={() => animateInIcon(index)}
                 onMouseLeave={() => animateOutIcon(index)}
-                className="b--black hover-white hover-bg-black w-90 pointer ba items-center justify-center flex flex-row pl1 pr1 w-60 pt1 pb1 overflow-hidden   ">
+                className="hover-bg-black hover-white bg-animate b--black black w-90 pointer ba items-center justify-center flex flex-row pl1 pr1 w-60 pt1 pb1 overflow-hidden   ">
                 <Motion
                   defaultStyle={{ translateX: -20, opacity: 0 }}
                   style={{

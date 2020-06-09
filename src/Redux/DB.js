@@ -471,3 +471,67 @@ export const newProductsData = [
       id:'eight',
     },
   ]
+  export const brands = [
+    {
+      name:"Zara",
+      fontStyle:"athelas",
+      border:false
+    },
+    {
+      name:"Puma",
+      fontStyle:"avenir",
+      border:false
+    },
+    {
+      name:"Ds Boy",
+      fontStyle:"baskerville",
+      border:false
+    },
+    {
+      name:"Vetra",
+      fontStyle:"bodoni",
+      border:false
+    },{
+      name:"Zara",
+      fontStyle:"calisto",
+      border:false
+    },{
+      name:"Champion",
+      fontStyle:"",
+      border:false
+    },{
+      name:"Versachi",
+      fontStyle:"courier",
+      border:false
+    },{
+      name:"Zara",
+      fontStyle:"garamond",
+      border:false
+    }
+  ] 
+  export const blogs = [
+    {
+      title:"Check Out The Trending",
+      date: "February 5, 2020",
+      author:"Nathan Raferl",
+      id:"one"
+    },
+    {
+      title:"What is the Latest?",
+      date: "June 12, 2020",
+      author:"Peter Watson",
+      id:"two"
+    },
+    {
+      title:"Second Hand Gadgets",
+      date: "February 31, 2020",
+      author:"Nameless Dude",
+      id:"three"
+    },
+    {
+      title:"The Future of Everything",
+      date: "March 11, 2020",
+      author:"Noman Betadan",
+      id:"four"
+    }
+  ]

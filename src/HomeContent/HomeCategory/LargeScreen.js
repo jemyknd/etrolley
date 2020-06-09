@@ -19,7 +19,7 @@ const mapStateToProps = (state) => ({
     accessoriesCatState: state.homeCategory.accessoriesCatState
   });
 const LargeScreen = ({showMencat,hideMencat,showWomencat,hideWomencat,showAccessoriesncat,hideAccessoriesncat,menCatState,womenCatState,accessoriesCatState}) => (
-    <div className="bg-purple LCgrid-Container" >
+    <div className=" LCgrid-Container" >
         <div className="LCgrid-item " onMouseEnter={showMencat} onMouseLeave={hideMencat}>
         <Content  category="WOMEN'S" links={['Shirts','Troggies','Sweaters','Socks','Caps','Gloves']} selectedState={menCatState} />
         </div>

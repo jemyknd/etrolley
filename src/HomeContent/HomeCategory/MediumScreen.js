@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => ({
      accessoriesCatState: state.homeCategory.accessoriesCatState
    });
 const MediumScreen = ({showMencat,hideMencat,showWomencat,hideWomencat,showAccessoriesncat,hideAccessoriesncat,menCatState,womenCatState,accessoriesCatState}) => (
-    <div className="bg-purple MCgrid-Container" >
+    <div className=" MCgrid-Container" >
         <div className="MCgrid-item" onMouseEnter={showMencat} onMouseLeave={hideMencat}>
         <Content  category="WOMEN'S" links={['Shirts','Troggies','Sweaters','Socks','Caps','Gloves']} selectedState={menCatState} />
         </div>

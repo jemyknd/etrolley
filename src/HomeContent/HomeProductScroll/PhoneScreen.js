@@ -70,7 +70,7 @@ const PhoneScreen = ({
     slidesToScroll:1,
     autoplay:true,
     className:' leftright',
-    dots:false,
+    dots:true,
     swipeToSlide: true,
  autoplaySpeed: 5000,
 
@@ -83,7 +83,7 @@ const PhoneScreen = ({
     customSlider.current.prev();
   }
   return (
-    <div className="flex flex-column mt2" >
+    <div className="flex flex-column mt2 mb4" >
             <div className="flex justify-center f4 black">Trending Now</div>
            
               <div className="relative " onMouseEnter={()=>showArrow()} onMouseLeave={()=>hideArrow()} >
@@ -253,7 +253,7 @@ const PhoneScreen = ({
        <div
          onMouseEnter={() => animateInIcon(index)}
          onMouseLeave={() => animateOutIcon(index)}
-         className="b--black hover-white hover-bg-black w-90 pointer ba items-center justify-center flex flex-row pl1 pr1 w-60 pt1 pb1 overflow-hidden   ">
+         className="hover-bg-black hover-white bg-animate b--black black w-90 pointer ba items-center justify-center flex flex-row pl1 pr1 w-60 pt1 pb1 overflow-hidden   ">
          <Motion
            defaultStyle={{ translateX: -20, opacity: 0 }}
            style={{
@@ -310,13 +310,7 @@ const PhoneScreen = ({
         ))}
 
       </Carousel>
-      <Motion
-      defaultStyle={{ translateX: -15, opacity: 0 }}
-      style={{
-        translateX: spring(sideArrows?-0:-15, presets.gentle),
-        opacity: spring(sideArrows?1:0, presets.gentle),
-      }}>
-        {(style) => (
+ 
 
 <IconContext.Provider
                       value={{
@@ -325,10 +319,7 @@ const PhoneScreen = ({
                         className: "global-class-name",
                       }}>
                       <div
-                       style={{
-                        transform: `translateX(${style.translateX}px)`,
-                        opacity: style.opacity,
-                      }}
+                     
                       className="absolute bg-white-50 pa1 flex items-center justify-center arrowcont pointer"
                       onClick={()=>previous()}
                       >
@@ -336,17 +327,9 @@ const PhoneScreen = ({
                       </div>
                     </IconContext.Provider>
 
-                      )}
-      
-      </Motion>
+           
 
-      <Motion
-      defaultStyle={{ translateX: 15, opacity: 0 }}
-      style={{
-        translateX: spring(sideArrows?0:15, presets.gentle),
-        opacity: spring(sideArrows?1:0, presets.gentle),
-      }}>
-        {(style) => (
+    
 
 
 <IconContext.Provider
@@ -356,19 +339,14 @@ const PhoneScreen = ({
                         className: "global-class-name",
                       }}>
                       <div
-                        style={{
-                          transform: `translateX(${style.translateX}px)`,
-                          opacity: style.opacity,
-                        }}
+                       
                          className="absolute bg-white-50 pa1 flex items-center justify-center  arrowcont right-0 pointer"
                          onClick={()=>next()}
                          >
                         <BsChevronRight />
                       </div>
                     </IconContext.Provider>
-                      )}
-      
-      </Motion>
+                      
       
       </div>
 

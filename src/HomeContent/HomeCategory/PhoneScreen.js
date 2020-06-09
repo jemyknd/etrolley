@@ -3,7 +3,7 @@ import "./css/phonescreen.css";
 import Content from './Content';
 
 const PhoneScreen = ({category}) => (
-    <div className="bg-purple PCgrid-Container" >
+    <div className=" PCgrid-Container" >
         <div className="PCgrid-item">
         <Content  category="WOMEN'S" links={[]} />
         </div>
