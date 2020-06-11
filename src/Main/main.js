@@ -7,16 +7,16 @@ import Media from 'react-media';
 import {Large,medium,smaller,small} from '../Universal/mediaConstants';
 
 
-const FooterContainer = () => (
+const Main = () => (
    
-<div>
+<div className="w-100">
     <Media queries = {{ Large:Large , medium:medium,smaller : smaller,small:small }}>
       {
         matches => (
           <div>
             {matches.Large && <LargeScreen/>}
-            {matches.medium && <MediumScreen/>}
-           {matches.small && <SmallScreen/>} 
+           {matches.medium && <MediumScreen/>}
+            {matches.small && <SmallScreen/>} 
            {matches.smaller && <PhoneScreen/>}
           </div>
         )
@@ -25,4 +25,4 @@ const FooterContainer = () => (
   </div>
 )
 
-export default FooterContainer;
+export default Main;

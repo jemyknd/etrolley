@@ -1,7 +1,6 @@
 import React from "react";
 import { Carousel } from "antd";
 import { connect } from "react-redux";
-import { Motion, spring, presets } from "react-motion";
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 import { IconContext } from "react-icons";
 import "./css/largescreen.css";

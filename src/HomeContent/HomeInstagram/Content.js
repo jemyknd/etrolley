@@ -5,16 +5,16 @@ import { IconContext } from "react-icons";
 
 
 
-const Content = ({width,size}) => {
+const Content = ({width,title,size,color1,color2,color3,color4,color5,color6,color7,color8}) => {
     return(
         <div>
-            <div className="black f4 flex justify-center mt4">@eTrolley follow us on </div>
+            <div className="black f4 flex justify-center ">{title}</div>
 
             <div className="flex justify-center items-center w-100 mt3 mb4">
               <div className=" flex-row flex justify-between" style={{width:`${width}%`}}>
               <IconContext.Provider
                         value={{
-                          color: "#3b5998",
+                          color: `${color1}`,
                           size: `${size}px`,
                           className: "global-class-name",
                         }}>
@@ -27,7 +27,7 @@ const Content = ({width,size}) => {
 
                       <IconContext.Provider
                         value={{
-                          color: "#fb3958",
+                          color: `${color2}` ,
                           size: `${size}px`,
                           className: "global-class-name",
                         }}>
@@ -40,7 +40,7 @@ const Content = ({width,size}) => {
 
                       <IconContext.Provider
                         value={{
-                          color: "#00acee",
+                          color:`${color3}` ,
                           size: `${size}px`,
                           className: "global-class-name",
                         }}>
@@ -52,7 +52,7 @@ const Content = ({width,size}) => {
                       </IconContext.Provider>
                       <IconContext.Provider
                         value={{
-                          color: "#db4a39 ",
+                          color:`${color4}` ,
                           size: `${size}px`,
                           className: "global-class-name",
                         }}>
@@ -64,7 +64,7 @@ const Content = ({width,size}) => {
                       </IconContext.Provider>
                       <IconContext.Provider
                         value={{
-                          color: "#7DBBE6",
+                          color:`${color5}` ,
                           size: `${size}px`,
                           className: "global-class-name",
                         }}>
@@ -76,7 +76,7 @@ const Content = ({width,size}) => {
                       </IconContext.Provider>
                       <IconContext.Provider
                         value={{
-                          color: "#c8232c",
+                          color: `${color6}` ,
                           size: `${size}px`,
                           className: "global-class-name",
                         }}>
@@ -88,7 +88,7 @@ const Content = ({width,size}) => {
                       </IconContext.Provider>
                       <IconContext.Provider
                         value={{
-                          color: "#E2A52E",
+                          color:`${color7}` ,
                           size: `${size}px`,
                           className: "global-class-name",
                         }}>
@@ -100,7 +100,7 @@ const Content = ({width,size}) => {
                       </IconContext.Provider>
                       <IconContext.Provider
                         value={{
-                          color: "#c4302b",
+                          color: `${color8}`,
                           size: `${size}px`,
                           className: "global-class-name",
                         }}>

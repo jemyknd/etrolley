@@ -11,7 +11,8 @@ import { Divider } from "antd";
 const LargeScreen = () => {
   return (
 <div>
-  <Divider className="fnos"/>
+  <Divider className="fnos "/>
+  
 <div className="fH w-100 justify-center flex mt4 ">
       <div className="fW fH mb4 ">
         <div className="flex flex-row items-start justify-between">

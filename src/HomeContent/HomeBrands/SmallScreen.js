@@ -101,7 +101,7 @@ const SmallScreen = ({ brands, showBorder, hideBorder,arrows,arrow,noArrow }) =>
                         transform: `translateX(${style.translateX}px)`,
                         opacity: style.opacity,
                       }}
-                      className="absolute bg-white flex pt1 pb1 items-center arrowcont pointer"
+                      className="absolute bg-white-40 transparent flex pt1 pb1 items-center arrowcont pointer"
                       onClick={()=>previous()}
                       >
                         <BsChevronLeft />
@@ -132,7 +132,7 @@ const SmallScreen = ({ brands, showBorder, hideBorder,arrows,arrow,noArrow }) =>
                           transform: `translateX(${style.translateX}px)`,
                           opacity: style.opacity,
                         }}
-                         className="absolute bg-white flex pt1 pb1 items-center arrowcont right-0 pointer"
+                         className="absolute bg-white-40 transparent flex pt1 pb1 items-center arrowcont right-0 pointer"
                          onClick={()=>next()}
                          >
                         <BsChevronRight />

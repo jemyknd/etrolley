@@ -1,0 +1,10 @@
+.customClassName{
+    position: relative;
+    z-index:-50;
+    background-color:white;
+}
+.scrollover{
+    position: relative;
+    z-index: 1;
+    background-color:white;
+}

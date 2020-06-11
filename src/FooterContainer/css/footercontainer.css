@@ -1,3 +1,25 @@
+.Collapsible__contentInner{
+    text-align: center;
+
+}
+
+span.Collapsible__trigger.is-closed{
+    width: 100%;
+
+}
+span.Collapsible__trigger.is-open{
+    width: 100%;
+
+
+}
+.Collapsible{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 .fH{
     height: auto;
 }
@@ -9,4 +31,8 @@
 }
 .subtn{
     width: 23%;
+}
+.colcon{
+    background-color: white;
+    text-align: center;
 }

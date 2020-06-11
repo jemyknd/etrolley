@@ -23,4 +23,5 @@
 ul.slick-dots.slick-dots-bottom{
     position:absolute;
     bottom: -8%;
+    z-index: 0;
 }
