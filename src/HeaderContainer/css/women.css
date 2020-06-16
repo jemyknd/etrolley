@@ -19,8 +19,21 @@
 }
 .Wtop{
     position: absolute;
-    z-index: 10;
+    z-index: 50;
 }
 .Wmar{
     margin: 0px;
+}
+.slider {
+	overflow-y: hidden;
+    max-height: 500px; 
+	transition-property: all;
+	transition-duration: .6s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+.slider.closed {
+    max-height: 0;
+    opacity: 0;
+
+    
 }

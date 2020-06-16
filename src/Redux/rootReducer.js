@@ -6,6 +6,7 @@ import {HomeBigCardsReducer} from './Actions/HomeContent/HomeBigCards/HomeBigCar
 import {HomeProductScrollReducer} from './Actions/HomeContent/HomeProductScroll/HomeProductScrollReducer';
 import {HomeBrandsReducer} from './Actions/HomeContent/HomeBrands/HomeBrandsReducer';
 import {HomeBlogReducer} from "./Actions/HomeContent/HomeBlog/HomeBlogReducer";
+import {cartReducer} from "./Actions/Cart/CartReducer";
 
 
 //combines all reducers so that they can be put in the store as rootReducer
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
     homeScrollProducts : HomeProductScrollReducer,
     homeBrands : HomeBrandsReducer,
     homeBlog:HomeBlogReducer,
+    cart: cartReducer
 });
 
 export default rootReducer;

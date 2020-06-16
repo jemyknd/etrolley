@@ -1,14 +1,25 @@
 .mvh{
-    height: 8vh;
+    height: auto;
     z-index: 100;
 
 }
 .mMar{
     margin: 0px;
 }
-.le{
-    width: 10vw;
+.lwid{
+    width:12%
 }
-.pe{
-    width: 30vw;
+.bcc{
+    border-color: #afacac;
+}
+.bcc:hover{
+    border-color: black;
+}
+
+.shadowcon{
+    box-shadow: 0 3.5px 2px -2px rgba(0, 0, 0, .2);
+}
+.bord{
+    border-radius: 13px;
+
 }

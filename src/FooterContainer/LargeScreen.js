@@ -27,7 +27,7 @@ const LargeScreen = () => {
             </div>
           </div>
           <div className="w-40  flex flex-row justify-between mt2 ">
-            <div className="ba w-75  b--black-40 ">
+            <div className="ba w-75   bcc">
               <input
                 placeholder="Enter Your Email Address "
                 type="email"

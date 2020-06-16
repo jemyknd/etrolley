@@ -1,0 +1,27 @@
+.innerCont{
+    width: 92%;
+}
+.tabCon{
+    width: 73%;
+}
+.autoh{
+    height: auto;
+}
+.mo{
+    margin: 0px;
+}
+.ivh{
+    height:28vh;
+}
+.sivh{
+    height:20vh;
+}
+.bcc{
+    border-color: #a3a0a0;
+}
+.bcc:hover{
+    border-color: black;
+}
+.reciptbg{
+    background-color: #f2f2f2;
+}

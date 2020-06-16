@@ -1,150 +1,358 @@
 import React from "react";
-import { Drawer, Divider, Collapse } from "antd";
+import { Drawer, Divider } from "antd";
 import ListComponent from "../Universal/ListComponent";
 import "./css/leftdrawer.css";
+import {MdKeyboardArrowRight,MdLocalActivity,MdComputer} from "react-icons/md";
+import {FaBoxOpen,FaStore,FaRegHeart,FaBaby,FaPeopleCarry,FaStoreAlt,FaGift} from "react-icons/fa";
+import {RiWomenLine,RiMenLine} from "react-icons/ri";
+import {GiHealthCapsule,GiFruitBowl} from "react-icons/gi";
+import {GrCompliance} from "react-icons/gr";
+import {FcElectronics,FcSportsMode} from "react-icons/fc";
+import {BsPhone} from "react-icons/bs"
+import { IconContext } from "react-icons";
 import { connect } from "react-redux";
-import { SearchOutlined, CloseOutlined } from "@ant-design/icons";
-import { hideLeftDrawer,topDrawerSearchField } from "../Redux/Actions/HeaderComponts/LargeScreen/Actions";
+import { hideLeftDrawer } from "../Redux/Actions/HeaderComponts/LargeScreen/Actions";
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    hideLeftDrawer: () => dispatch(hideLeftDrawer()),
-    searchInput: (event) => dispatch(topDrawerSearchField(event.target.value)),
-
-  };
-};
-
-const mapStateToProps = (state) =>{
-  return({
-    searchField : state.header.topDrawerSearchField
-  })
-}
-const customPanelStyle = {
-  background: '#ffffff',
-  border: 0,
-};
-const {Panel} = Collapse;
-const LeftDrawer = ({ onClose, visible, hideLeftDrawer,searchField,searchInput }) => {
+const mapDispatchToProps = (dispatch) => ({
+  hideLeftDrawer: () => dispatch(hideLeftDrawer()),
+})
+const LeftDrawer = ({ onClose, visible, hideLeftDrawer }) => {
  
   return (
-    <div className="only ">
+    <div className=" ">
       <Drawer
         placement="left"
-        closable={false}
+        closable={true}
         onClose={onClose}
         visible={visible}
+        drawerStyle={{margin:"0px",padding:"0px"}}
+        bodyStyle={{margin:"0px",padding:"0px"}}
         width={300}>
-        <div className="flex flex-column ds h-100 ">
-          <div className="pointer  w-10 pl3" onClick={hideLeftDrawer}>
-            <CloseOutlined style={{ fontSize: " 17px" }} />
-          </div>
-          <div className="topu">
-            <div className=" w-90 flex flex-row ">
-              <input
-              onChange = {searchInput}
-                value = {searchField}
-                placeholder="Search Products..."
-                type="text"
-                spellcheck="false"
-                className="wow  black fw4 f4  w-100 bb-1 bl-0 br-0 bt-0  "
-                style={{ outline: "none", textDecoration: "none" }}
-              />
-              <div className="pointer mr-auto s hover-black pt4">
-                <SearchOutlined
-                  style={{ fontSize: "20px", marginLeft: "2px" }}
-                />
+          <div className=" w-100 ">
+            <div className="w-100   flex  justify-center ">
+              <div className="w-90  mt3 mb2 flex flex-row">
+
+                <div className="black">LOGO</div>
               </div>
             </div>
-            <div className=" mt3">
-            {
-              searchField ? (<div className="pb2">
-                <div>Searching for {`${searchField}`}...</div>
-              </div>) : (
-                <Collapse
-                            accordion
-                            bordered={false}
-                            key="1"
-                            >
-                            <Panel header="CATERGORIES" key="1" style={customPanelStyle}>
-                                <Collapse
-                                accordion
-                                bordered={false}
-                                key="2"
-                                >
-                            <Panel header="WOMEN'S" key="2" style={customPanelStyle}>
-                                <ListComponent listData={['cat1','cat2','cat3','cat4','cat5','cat6','cat7','cat8','cat9']}/>
-                            </Panel>
-                            <Panel header="MEN'S" key="3" style={customPanelStyle}>
-                            <ListComponent listData={['cat1','cat2','cat3','cat4','cat5','cat6','cat7','cat8','cat9']}/>
-
-                            </Panel>
-                            <Panel header="ELECTRONICS" key="4" style={customPanelStyle}>
-                            <ListComponent listData={['cat1','cat2','cat3','cat4','cat5','cat6','cat7','cat8','cat9']}/>
-
-                            </Panel>
-                            <Panel header="OTHERS" key="5" style={customPanelStyle}>
-                            <ListComponent listData={['cat1','cat2','cat3','cat4','cat5','cat6','cat7','cat8','cat9']}/>
-
-                            </Panel>
-
-                                </Collapse>
-                            </Panel>
-                            <Panel header="WOMEN'S" key="6" style={customPanelStyle}>
-                            <Collapse
-                                accordion
-                                bordered={false}
-                                key="3"
-                                >
-                            <Panel header="CLOTHING" key="7" style={customPanelStyle}>
-                            <ListComponent listData={['cat1','cat2','cat3','cat4','cat5','cat6','cat7','cat8','cat9']}/>
-
-                            </Panel>
-                            <Panel header="SHOES" key="8" style={customPanelStyle}>
-                            <ListComponent listData={['cat1','cat2','cat3','cat4','cat5','cat6','cat7','cat8','cat9']}/>
-
-                            </Panel>
-                            <Panel header="ACCESSORIES" key="9" style={customPanelStyle}>
-                            <ListComponent listData={['cat1','cat2','cat3','cat4','cat5','cat6','cat7','cat8','cat9']}/>
-
-                            </Panel>
-
-                                </Collapse>
-                            </Panel>
-                            <Panel header="MEN'S" key="10" style={customPanelStyle}>
-                            <Collapse
-                                accordion
-                                bordered={false}
-                                key="4"
-                                >
-                            <Panel header="CLOTHING" key="11" style={customPanelStyle}>
-                            <ListComponent listData={['cat1','cat2','cat3','cat4','cat5','cat6','cat7','cat8','cat9']}/>
-
-                            </Panel>
-                            <Panel header="SHOES" key="12" style={customPanelStyle}>
-                            <ListComponent listData={['cat1','cat2','cat3','cat4','cat5','cat6','cat7','cat8','cat9']}/>
-
-                            </Panel>
-                            <Panel header="ACCESSORIES" key="13" style={customPanelStyle}>
-                            <ListComponent listData={['cat1','cat2','cat3','cat4','cat5','cat6','cat7','cat8','cat9']}/>
-
-                            </Panel>
-
-                                </Collapse>
-                            </Panel>
-                            <Collapse bordered={false} className="dotclps">
-                            <Panel style={customPanelStyle} showArrow={false} header="BEST SELLERS" />
-                           
-                            <Panel style={customPanelStyle} showArrow={false} header="SELL" />
-                           
-                          </Collapse>
-                            </Collapse>
-              )
-            }
+            <Divider className="it" />
+            <div className="w-100 flex  justify-center ">
+              <div className="w-90  mt3 mb2 flex flex-column">
+                <div className="flex flex-row justify-between items-center">
+                  <div className="pointer">MY TROLLEY ACCOUNT</div>
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mt1 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <MdKeyboardArrowRight />
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                </div>
+                <div className="flex flex-row black mt1 mb1">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <FaBoxOpen/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Orders</div>
+                </div>
+                <div className="flex flex-row black mt1 mb1">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <FaStore/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">My Store</div>
+                </div>
+                <div className="flex flex-row black mt1 mb1">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <MdLocalActivity/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">My Activity</div>
+                </div>
+                <div className="flex flex-row black mt1 mb1">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <FaRegHeart/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Wishlist</div>
+                </div>
+              </div>
             </div>
-          </div>
-          <Divider className="it" />
-          <div className="down">
-            <div className="mt3">
+            <Divider className="it" />
+            <div className="w-100 flex  justify-center ">
+              <div className="w-90  mt3 mb2 flex flex-column">
+                <div className="flex flex-row justify-between">
+                  <div className="pointer">CATEGORIES</div>
+                  <div className="hover-black pointer underline">SeeAll</div>
+                </div>
+                <div className="flex flex-row black mt2 mb2">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <RiWomenLine/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Women Fashion</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <RiMenLine/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Men Fashion</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <GiHealthCapsule/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Health & Beauty</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <FaBaby/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Baby Products</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <GiFruitBowl/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Foods</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <GrCompliance/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Home & Office</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <FcElectronics/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Electronics</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <BsPhone/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Phones & Tablets</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <MdComputer/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Computers</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <FcSportsMode/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Sporting Goods</div>
+                </div>
+              </div>
+            </div>
+            <Divider className="it" />
+            <div className="w-100 flex  justify-center ">
+              <div className="w-90  mt3 mb2 flex flex-column">
+                <div className="flex flex-row justify-between">
+                  <div className="pointer">CUSTOMER SERVICES</div>
+                  <div className="underline pointer hover-black">SeeAll</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <FaPeopleCarry/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Delivery</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <FaStoreAlt/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Our Store</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "20px",
+                    className: "global-class-name mr3 pointer",
+                  }}>
+                  <div className="pointer ">
+                    <FaGift/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div className="pointer">Our Offers</div>
+                </div>
+                
+              </div>
+            </div>
+            <Divider className="it" />
+            <div className="w-100 flex  justify-center ">
+              <div className="w-90  mt3 mb2 flex flex-column">
+
+                <div className="flex flex-row black mt1 mb2">
+                  <div className="pointer">Sell on eTrolley</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div className="pointer">Help Center</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div className="pointer">Contact Us</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div className="pointer">Privacy Policy</div>
+                </div>
+                <div className="flex flex-row black mt1 mb2">
+                  <div className="pointer">Cookies Policy</div>
+                </div>
+              </div>
+            </div>
+            <Divider className="it" />
+            <div className="w-100 flex down  justify-center ">
+              <div className="w-90  mt3 mb2 flex flex-column">
               <ListComponent
                 listData={[
                   "UGX (Shs)",
@@ -156,26 +364,14 @@ const LeftDrawer = ({ onClose, visible, hideLeftDrawer,searchField,searchInput }
                   "JPY (¥)",
                 ]}
               />
+              </div>
             </div>
-            <div className="mt4 mb3">
-              <ListComponent
-                listData={[
-                  "English",
-                  "Arabic",
-                  "German",
-                  "French",
-                  "Russian",
-                  "Swahili",
-                  "Japanese",
-                  "Spanish",
-                ]}
-              />
-            </div>
+
           </div>
-        </div>
+
       </Drawer>
     </div>
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LeftDrawer);
+export default connect(null, mapDispatchToProps)(LeftDrawer);

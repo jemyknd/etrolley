@@ -16,5 +16,21 @@
 }
 .Mtop{
     position: absolute;
-    z-index: 10;
+    z-index: 50;
+}
+.shadowcon{
+    box-shadow: 0 3.5px 2px -2px rgba(0, 0, 0, .2);
+}
+.slider {
+	overflow-y: hidden;
+    max-height: 500px; 
+	transition-property: all;
+	transition-duration: .6s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+.slider.closed {
+    max-height: 0;
+    opacity: 0;
+
+    
 }

@@ -15,5 +15,18 @@
 }
 .Ntop{
     position: absolute;
-    z-index: 200;
+    z-index: 500;
+}
+.slider {
+	overflow-y: hidden;
+    max-height: 500px; 
+	transition-property: all;
+	transition-duration: .6s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+.slider.closed {
+    max-height: 0;
+    opacity: 0;
+
+    
 }

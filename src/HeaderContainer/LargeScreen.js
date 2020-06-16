@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import "./css/LargeScreen.css";
 import Sticky from "react-sticky-el";
-// import "./css/Animate.css";
-import { Divider, Select,Popover } from "antd";
+import { Divider, Select, Popover } from "antd";
 import NavCategory from "./NavCategory";
 import Men from "./Men";
 import Women from "./Women";
-import SearchDrawer from './SearchDrawer';
 import { connect } from "react-redux";
 import {
   hideCategory,
@@ -18,26 +16,24 @@ import {
   showTopDrawer,
   hideTopDrawer,
 } from "../Redux//Actions/HeaderComponts/LargeScreen/Actions";
+import {BsSearch} from "react-icons/bs";
+import { FaRegUser,FaRegHeart, FaBalanceScale } from "react-icons/fa";
+import { MdShoppingCart } from "react-icons/md";
+import { IconContext } from "react-icons";
 import {
-  HeartOutlined,
-  UserOutlined,
-  ShoppingCartOutlined,
-  MergeCellsOutlined,
   DownOutlined,
-  SearchOutlined,
 } from "@ant-design/icons";
 
 const { Option } = Select;
 const help = (
-	<div>
-		<div className=" pointer">My Account</div>
-		<div className=" pointer">Agent</div>
-		<div className=" pointer">Customer Care</div>
-		<div className=" pointer">Business</div>
-		<div className=" pointer">FAQs</div>
-
-	</div>
-)
+  <div>
+    <div className=" pointer">My Account</div>
+    <div className=" pointer">Agent</div>
+    <div className=" pointer">Customer Care</div>
+    <div className=" pointer">Business</div>
+    <div className=" pointer">FAQs</div>
+  </div>
+);
 const mapDispatchToProps = (dispatch) => {
   return {
     onMouseEnterCategory: () => dispatch(showCategory()),
@@ -47,7 +43,7 @@ const mapDispatchToProps = (dispatch) => {
     onMouseEnterWomen: () => dispatch(showWomen()),
     onMouseLeaveWomen: () => dispatch(hideWomen()),
     onOpenSearch: () => dispatch(showTopDrawer()),
-    onCloseSearch: () => dispatch(hideTopDrawer())
+    onCloseSearch: () => dispatch(hideTopDrawer()),
   };
 };
 const mapStateToProps = (state) => ({
@@ -70,35 +66,67 @@ class LargeScreen extends Component {
       onMouseLeaveWomen,
       womenState,
       onOpenSearch,
-      onCloseSearch,
-      topDrawerState,
-      searchInputValue,
     } = this.props;
     return (
-      <nav className="ontop">
-				<SearchDrawer visible={topDrawerState} onClose={onCloseSearch} value={searchInputValue}/>
+      <nav className="ontop shadowcon">
         <div className="Lvh  flex flex-row justify-center">
           <div className="h-100 w-90 flex flex-row">
-            <div className="h-100  w-10 flex  items-center">
-              <div>LOGO</div>
+            <div className="h-100 black  w-10 flex  items-center">
+              <div >LOGO</div>
             </div>
-            <div className="h-100  ml-auto lwid flex flex-row justify-between items-center">
-              <div className="pointer ">
-                <UserOutlined style={{ fontSize: "18px" }} />
-              </div>
-              <div className="pointer">
-                <HeartOutlined style={{ fontSize: "18px" }} />
-              </div>
-              <div className="pointer">
-                <MergeCellsOutlined style={{ fontSize: "18px" }} />
-              </div>
-              <div className="pointer">
-                <ShoppingCartOutlined style={{ fontSize: "18px" }} />
-              </div>
+            <div className="h-100  ml-auto w-33 flex flex-row justify-between items-center">
+            <div>
+                  <IconContext.Provider
+                    value={{
+                      color: "black",
+                      size: "18px",
+                      className: "global-class-name",
+                    }}>
+                    <div className="pointer pt1 ">
+                      <FaRegUser />
+                    </div>
+                  </IconContext.Provider>
+                </div>
+                <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "18px",
+                    className: "global-class-name  pointer",
+                  }}>
+                  <div className="pointer pt1">
+                    <FaRegHeart/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
+                  <div>
+                  <IconContext.Provider
+                  value={{
+                    color: "black",
+                    size: "18px",
+                    className: "global-class-name  pointer",
+                  }}>
+                  <div className="pointer pt1">
+                    <FaBalanceScale/>
+                  </div>
+                </IconContext.Provider>
+                  </div>
               <div>
+                  <IconContext.Provider
+                    value={{
+                      color: "black",
+                      size: "18px",
+                      className: "global-class-name",
+                    }}>
+                    <div className="pointer pt1  ">
+                      <MdShoppingCart />
+                    </div>
+                  </IconContext.Provider>
+                </div>
+              <div className="black">
                 <Select
                   defaultValue="English"
-                  style={{ width: 100 }}
+                  style={{ width: 100,color:"black" }}
                   bordered={false}
                   loading={false}>
                   <Option value="English">English</Option>
@@ -110,10 +138,10 @@ class LargeScreen extends Component {
                   <Option value="Spanish">Spanish</Option>
                 </Select>
               </div>
-              <div>
+              <div clasName="black">
                 <Select
                   defaultValue="UGX"
-                  style={{ width: 100 }}
+                  style={{ width: 100 ,color:"black"}}
                   bordered={false}
                   loading={false}>
                   <Option value="UGX">UGX (Shs)</Option>
@@ -130,10 +158,10 @@ class LargeScreen extends Component {
         </div>
 
         <Divider className="Lmar" />
-        <Sticky topOffset={50} stickyClassName={"animated fadeIn z-2"}>
-          <div className="Lvh2 flex flex-row justify-center bg-white-80 transparent ">
+        <Sticky topOffset={50} stickyClassName={" z-2"}>
+          <div className="Lvh2 flex flex-row justify-center bg-white-90 transparent ">
             <div className="h-100 w-90 flex flex-row">
-              <div className="h-100 cwid flex flex-row items-center justify-between">
+              <div className="h-100 cwid flex flex-row black items-center justify-between">
                 <div className="flex flex-row pointer">
                   <div>HOME</div>
                 </div>
@@ -166,10 +194,10 @@ class LargeScreen extends Component {
                   </div>
                 </div>
 
-                <div className="flex flex-row pointer h-100 items-center"
-                onMouseEnter={onMouseEnterWomen}
-                onMouseLeave={onMouseLeaveWomen}
-                >
+                <div
+                  className="flex flex-row pointer h-100 items-center"
+                  onMouseEnter={onMouseEnterWomen}
+                  onMouseLeave={onMouseLeaveWomen}>
                   <div>WOMEN'S</div>
                   <div>
                     <DownOutlined
@@ -182,21 +210,32 @@ class LargeScreen extends Component {
                 </div>
 
                 <Popover placement="bottom" content={help}>
-                <div className="flex flex-row pointer">
-                  <div>HELP</div>
-                  <div>
-                    <DownOutlined
-                      style={{ fontSize: "10px", marginLeft: "5px" }}
-                    />
+                  <div className="flex flex-row pointer">
+                    <div>HELP</div>
+                    <div>
+                      <DownOutlined
+                        style={{ fontSize: "10px", marginLeft: "5px" }}
+                      />
+                    </div>
                   </div>
-                </div>
                 </Popover>
               </div>
-              <div className="h-100 Lwid ml-auto  flex flex-row justify-around items-center pointer" onClick={onOpenSearch}>
-                <div>SEARCH</div>
-                <div>
-                  <SearchOutlined style={{ fontSize: "18px" }} />
-                </div>
+              <div
+                className="h-100 Lwid ml-auto  flex flex-row justify-around items-center pointer"
+                >
+                <div className="hover-black">SEARCH</div>
+                <div className="pointer  ">
+                  <IconContext.Provider
+                    value={{
+                      color: "black",
+                      size: "18px",
+                      className: "global-class-name",
+                    }}>
+                    <div className="pointer">
+                      <BsSearch />
+                    </div>
+                  </IconContext.Provider>
+                  </div>
               </div>
             </div>
           </div>

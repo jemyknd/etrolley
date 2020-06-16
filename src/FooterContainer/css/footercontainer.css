@@ -36,3 +36,9 @@ span.Collapsible__trigger.is-open{
     background-color: white;
     text-align: center;
 }
+.bcc:hover{
+    border-color: black;
+}
+.reciptbg{
+    background-color: #f2f2f2;
+}

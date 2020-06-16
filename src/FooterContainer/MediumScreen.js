@@ -36,7 +36,7 @@ const MediumScreen = () => {
             Sign up for Grabit updates to receive information about new
             arrivals, future events and specials.
           </div>
-          <div className="ba w-100 pt2 pb2 bg-white mt2 b--black-40 ">
+          <div className="ba w-100 pt2 pb2 bg-white mt2 bcc ">
             <input
               placeholder="Enter Your Email Address "
               type="email"
@@ -64,7 +64,8 @@ const MediumScreen = () => {
    <Divider className="fnos " />
   <Collapse
   bordered={false}
-  className="colcon"
+  className="colcon "
+  style={{backgroundColor:"white"}}
   expandIconPosition="right"
   expandIcon={({ isActive }) => <PlusOutlined  rotate={isActive ? 50 : 0} style={{color:"black",padding:"0px",margin:"0px"}} />}
   >

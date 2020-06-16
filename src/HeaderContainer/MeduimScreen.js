@@ -1,75 +1,117 @@
-import React,{Component} from "react";
+import React from "react";
 import Sticky from "react-sticky-el";
-import { Divider } from "antd";
 import "./css/meduim.css";
-import {connect} from 'react-redux';
-import LeftDrawer from './LeftDrawer';
+import { connect } from "react-redux";
+import LeftDrawer from "./LeftDrawer";
+import { FiMenu } from "react-icons/fi";
+import {BsSearch} from "react-icons/bs";
+import { FaRegUser } from "react-icons/fa";
+import { MdShoppingCart } from "react-icons/md";
+import { IconContext } from "react-icons";
+
 import {
-  BarsOutlined,
-  HeartOutlined,
-  UserOutlined,
-  ShoppingCartOutlined,
-  MergeCellsOutlined,
-  QuestionCircleOutlined,
-} from "@ant-design/icons";
-import {
-showLeftDrawer,
-hideLeftDrawer
+  showLeftDrawer,
+  hideLeftDrawer,
 } from "../Redux/Actions/HeaderComponts/LargeScreen/Actions";
 
 const mapDispatchToProps = (dispatch) => {
- return ({
-   showLeftDrawer: () => dispatch(showLeftDrawer()),
-   hideLeftDrawer: () => dispatch(hideLeftDrawer()),
- })
-}
+  return {
+    showLeftDrawer: () => dispatch(showLeftDrawer()),
+    hideLeftDrawer: () => dispatch(hideLeftDrawer()),
+  };
+};
 const mapStateToProps = (state) => {
-  return({
-    leftDrawerState : state.header.leftDrawerState
-  })
-}
-class MeduimScreen extends Component{
+  return {
+    leftDrawerState: state.header.leftDrawerState,
+  };
+};
 
-  render(){
-    return(
+    const MeduimScreen =  ({leftDrawerState,showLeftDrawer,hideLeftDrawer} ) => (
       <Sticky topOffset={50} stickyClassName={"animated fadeIn z-2"}>
-        <div className="mvh w-100 bg-white-80 transparent">
-          <div className="h-100 w-100  flex flex-row justify-center">
-            <div className="h-100 w-80  flex flex-row">
-              <div className="h-100  flex flex-row items-center justify-around le">
-                <div className="pointer" onClick={this.props.showLeftDrawer}>
-                  <BarsOutlined style={{ fontSize: "20px" }} />
-    
-                </div>
+        <div className="mvh w-100 bg-white  flex justify-center shadowcon">
+          <div className=" w-90 flex flex-column">
+            <div className="w-100 mb2 mt3   flex flex-row justify-center justify-between mt2 mb1">
+              <div className=" lwid flex flex-row justify-between ">
+              <div>
+            <LeftDrawer onClose={hideLeftDrawer} visible={leftDrawerState} hideLeftDrawer={hideLeftDrawer}/>
+            </div>
                 <div>
-                  <LeftDrawer onClose={this.props.hideLeftDrawer} visible={this.props.leftDrawerState}/>
+                  <IconContext.Provider
+                    value={{
+                      color: "black",
+                      size: "20px",
+                      className: "global-class-name",
+                    }}>
+                    <div className="pointer pt1  pb1" onClick={showLeftDrawer}>
+                      <FiMenu />
+                    </div>
+                  </IconContext.Provider>
                 </div>
-                <div className="pointer">LOGO</div>
+                <div className="black pt1  pb1">LOGO</div>
               </div>
-              <div className="h-100  flex flex-row items-center justify-around ml-auto pe">
-                <div className="pointer ">
-                  <QuestionCircleOutlined style={{ fontSize: "20px" }} />
+              <div className="w-70  flex flex-row justify-center">
+             
+                <div className="w-90 ba bcc flex flex-row justify-between items-center">
+                  <input
+                    placeholder="Search Product, Brand, Category "
+                    type="text"
+                    style={{
+                      outline: "none",
+                      border: "none",
+                      paddingLeft: "5px",
+                      textDecoration: "none",
+                      height: "100%",
+                      width: "100%",
+                      fontSize: "16px",
+                      color: "black",
+                    }}
+                    //   onChange={this.handleEmailInput}
+                    spellCheck="false"
+                  />
+                  <div className="pointer mr2 mt1 ">
+                  <IconContext.Provider
+                    value={{
+                      color: "black",
+                      size: "18px",
+                      className: "global-class-name",
+                    }}>
+                    <div className="pointer">
+                      <BsSearch />
+                    </div>
+                  </IconContext.Provider>
+                  </div>
                 </div>
-                <div className="pointer ">
-                  <UserOutlined style={{ fontSize: "20px" }} />
+              </div>
+              <div className=" w-10 flex flex-row justify-between">
+                <div>
+                  <IconContext.Provider
+                    value={{
+                      color: "black",
+                      size: "18px",
+                      className: "global-class-name",
+                    }}>
+                    <div className="pointer pt1  pb1">
+                      <FaRegUser />
+                    </div>
+                  </IconContext.Provider>
                 </div>
-                <div className="pointer">
-                  <HeartOutlined style={{ fontSize: "20px" }} />
-                </div>
-                <div className="pointer">
-                  <MergeCellsOutlined style={{ fontSize: "20px" }} />
-                </div>
-                <div className="pointer">
-                  <ShoppingCartOutlined style={{ fontSize: "20px" }} />
+
+                <div>
+                  <IconContext.Provider
+                    value={{
+                      color: "black",
+                      size: "18px",
+                      className: "global-class-name",
+                    }}>
+                    <div className="pointer pt1  pb1">
+                      <MdShoppingCart />
+                    </div>
+                  </IconContext.Provider>
                 </div>
               </div>
             </div>
           </div>
-          <Divider className="mMar" />
         </div>
       </Sticky>
     );
-  }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(MeduimScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(MeduimScreen);
