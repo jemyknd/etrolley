@@ -163,8 +163,8 @@ const LargeScreen = () => {
    
 <div className="fW fH  flex flex-row justify-between">
        <div className=" flex flex-row pointer">
-         <div className="h-100 flex items-center mr2">LOGO</div>
-        <div className="f7">
+         <div className="h-100 flex items-center mr2 black">LOGO</div>
+        <div className="f7 black">
         © 2020 eTrolley Fashion Store . All Rights Reserved. Ecommerce Software by Jemba Tony. 
          <br/>
          Not Yet Ready For Release

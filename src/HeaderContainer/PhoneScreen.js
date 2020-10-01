@@ -80,7 +80,7 @@ const mapStateToProps = (state) => {
              
              <div className="w-100 bord  pt1 pb1 ba bcc flex flex-row justify-between items-center">
                <input
-                 placeholder="Search Product, Brand, Category "
+                 placeholder="Search Product, Brand and Category "
                  type="text"
                  style={{
                    outline: "none",
